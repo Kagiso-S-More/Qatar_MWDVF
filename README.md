@@ -402,13 +402,11 @@ The results should be interpreted within the following methodological limitation
 
 2. **Bias-correction uncertainty:** Bias correction reduces selected systematic differences between historical simulations and reference data but does not eliminate future projection uncertainty.
 
-3. **Hydraulic assumptions:** Hydraulic vulnerability is estimated using theoretical pipeline parameters rather than observed hydraulic measurements from a fully calibrated municipal network.
+3. **Spatial uncertainty:** Spatial interpolation, sampling distribution, and municipality-level aggregation may influence the resulting vulnerability patterns.
 
-4. **Spatial uncertainty:** Spatial interpolation, sampling distribution, and municipality-level aggregation may influence the resulting vulnerability patterns.
+4. **Machine-learning uncertainty:** Classification performance depends on predictor selection, target-variable construction, training data, and validation procedures.
 
-5. **Machine-learning uncertainty:** Classification performance depends on predictor selection, target-variable construction, training data, and validation procedures.
-
-6. **Operational interpretation:** The framework is intended for comparative susceptibility assessment and research-based prioritization, not direct prediction of individual pipeline failures.
+5. **Operational interpretation:** The framework is intended for comparative susceptibility assessment and research-based prioritization, not direct prediction of individual pipeline failures.
 
 ---
 
