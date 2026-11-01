@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.spyproject/
+.spyderproject/
+.env
+.venv/
+Thumbs.db
+.DS_Store
+~$*.xlsx
+*.tmp

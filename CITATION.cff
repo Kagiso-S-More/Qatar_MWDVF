@@ -1,0 +1,8 @@
+cff-version: 1.2.0
+message: "Please cite the associated manuscript and this repository when using these materials."
+title: "Qatar Municipal Water Distribution Vulnerability Framework: data and analysis"
+type: dataset
+authors:
+  - family-names: More
+    given-names: Kagiso S.
+# Add co-authors, publication year, manuscript DOI and repository DOI before release.
