@@ -57,7 +57,7 @@ df = pd.DataFrame({
 for var in ds_mean.data_vars:
     df[var] = ds_mean[var].values
 
-# Add a readable Date column (optional, helps Excel)
+# Add a readable Date column
 df["Date"] = pd.to_datetime(dict(year=df["Year"], month=df["Month"], day=1))
 
 # Metadata sheet
