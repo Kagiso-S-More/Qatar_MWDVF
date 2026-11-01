@@ -1,4 +1,29 @@
-*.nc filter=lfs diff=lfs merge=lfs -text
-*.nc4 filter=lfs diff=lfs merge=lfs -text
-*.grib filter=lfs diff=lfs merge=lfs -text
-*.grb filter=lfs diff=lfs merge=lfs -text
+
+# Automatic text-file handling
+* text=auto
+
+# Python and documentation files
+*.py text
+*.md text
+*.txt text
+*.csv text
+*.yml text
+*.yaml text
+*.cff text
+
+# Excel workbooks
+*.xlsx binary
+*.xls binary
+
+# NetCDF climate datasets
+*.nc binary
+
+# Figures and images
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.tif binary
+*.tiff binary
+
+# PDF documents
+*.pdf binary
