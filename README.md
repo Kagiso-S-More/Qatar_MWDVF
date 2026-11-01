@@ -197,7 +197,6 @@ Qatar_MWDVF/
 ├── README.md
 ├── CITATION.cff
 ├── requirements.txt
-├── UPLOAD_GUIDE.md
 ├── .gitignore
 ├── .gitattributes
 │
