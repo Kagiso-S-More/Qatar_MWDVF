@@ -1,8 +1,49 @@
 cff-version: 1.2.0
-message: "Please cite the associated manuscript and this repository when using these materials."
-title: "Qatar Municipal Water Distribution Vulnerability Framework: data and analysis"
-type: dataset
+message: >-
+  If you use the datasets, Python scripts, modelling outputs,
+  or methodological framework from this repository,
+  please cite this repository and the associated research
+  publication when available.
+
+type: software
+
+title: >-
+  Qatar Municipal Water Distribution Vulnerability
+  Framework (MWDVF)
+
 authors:
   - family-names: More
     given-names: Kagiso S.
-# Add co-authors, publication year, manuscript DOI and repository DOI before release.
+
+abstract: >-
+  This repository provides research datasets, Python scripts,
+  climate projections, modelling outputs, and supporting
+  documentation for an integrated GIS-AI assessment of
+  municipal water distribution vulnerability in Qatar.
+  The framework combines groundwater hydrochemistry,
+  historical and projected hydroclimatic stress,
+  hydraulic susceptibility, GIS-based spatial analysis,
+  and machine-learning classification. Climate projections
+  incorporate ACCESS-CM2 simulations under SSP2-4.5 and
+  SSP5-8.5. The computational workflow uses Python 3.13.9
+  and includes Random Forest, Gradient Boosting, and XGBoost.
+
+keywords:
+  - Municipal water distribution
+  - Vulnerability assessment
+  - Hydrogeochemistry
+  - Hydroclimatic stress
+  - Hydraulic modelling
+  - Geographic information systems
+  - Machine learning
+  - Climate change
+  - CMIP6
+  - Qatar
+
+repository-code: >-
+  https://github.com/Kagiso-S-More/Qatar_MWDVF
+
+url: >-
+  https://github.com/Kagiso-S-More/Qatar_MWDVF
+
+license: CC-BY-4.0
