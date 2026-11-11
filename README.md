@@ -1,14 +1,20 @@
 # Qatar Water Distribution Vulnerability Framework (WDVF)
 
+**An Integrated GIS–AI Framework for Water Distribution Vulnerability Assessment Using Hydrochemical, Hydroclimatic and Hydraulic Indicators in Qatar**
+
 ## 1. Overview
 
-This repository contains the research datasets, Python scripts, modelling outputs, climate projections, and supporting documentation developed for the study:
+This repository contains the research datasets, Python scripts, modelling outputs, climate projections, geospatial resources and interactive visualisation tools developed for the study:
 
 **Integrated GIS–AI Assessment of Water Distribution Vulnerability Using Hydrochemical, Hydroclimatic and Hydraulic Indicators in Qatar**
 
-The study develops an integrated framework for assessing water distribution vulnerability in Qatar by combining groundwater hydrochemistry, hydroclimatic stress, hydraulic susceptibility, geographic information systems (GIS), and artificial intelligence (AI).
+The Water Distribution Vulnerability Framework (WDVF) integrates groundwater hydrochemistry, hydroclimatic stress, hydraulic susceptibility, geographic information systems (GIS) and artificial intelligence (AI) to assess spatial differences in water distribution vulnerability across Qatar.
 
-The repository supports research transparency, computational reproducibility, methodological verification, and future applications of integrated vulnerability assessment in water-resource management and infrastructure planning.
+The framework combines environmental indicators, hydraulic performance calculations, spatial vulnerability analysis and machine-learning classification to support water infrastructure assessment, risk identification and management prioritisation.
+
+An interactive **Qatar Water Vulnerability Intelligence Dashboard** extends the analytical framework by presenting the principal research outputs through an integrated, GIS-enabled decision-support interface.
+
+The repository supports scientific transparency, computational reproducibility, methodological verification and future applications in water-resource management, infrastructure planning and climate resilience.
 
 **Repository:** https://github.com/Kagiso-S-More/Qatar_MWDVF
 
@@ -18,15 +24,16 @@ The repository supports research transparency, computational reproducibility, me
 
 ## 2. Research Objectives
 
-The study aims to:
+The principal objectives of the WDVF are to:
 
-1. Evaluate groundwater hydrochemical characteristics and derive hydrochemical vulnerability indicators.
+1. Evaluate groundwater hydrochemical characteristics and derive indicators of hydrochemical vulnerability.
 2. Quantify historical hydroclimatic stress using ERA5-Land climate data.
 3. Assess future hydroclimatic conditions using CMIP6 climate projections under SSP2-4.5 and SSP5-8.5.
-4. Evaluate hydraulic susceptibility using theoretical pipeline configurations and hydrochemically informed risk indicators.
-5. Integrate hydrochemical, hydroclimatic, and hydraulic indicators through GIS-based spatial analysis.
-6. Apply machine-learning algorithms to classify vulnerability and identify influential predictors.
-7. Develop an integrated municipal water distribution vulnerability assessment framework applicable to Qatar and other water-stressed regions.
+4. Evaluate hydraulic susceptibility using pipeline configurations, engineering parameters and hydrochemically informed risk indicators.
+5. Integrate hydrochemical, hydroclimatic and hydraulic indicators through GIS-based spatial vulnerability analysis.
+6. Apply machine-learning algorithms to classify integrated vulnerability and identify influential predictors.
+7. Develop an interactive geospatial dashboard for visualising vulnerability patterns, comparing analytical indicators and supporting water infrastructure management.
+8. Establish a transferable assessment framework applicable to Qatar and other water-stressed regions.
 
 ---
 
@@ -34,15 +41,17 @@ The study aims to:
 
 ### 3.1 Study Area
 
-The study focuses on Qatar, a hyper-arid country characterized by limited natural freshwater availability, high atmospheric evaporative demand, and substantial reliance on engineered water infrastructure.
+The study focuses on Qatar, a hyper-arid country characterised by limited natural freshwater availability, high atmospheric evaporative demand and substantial reliance on engineered water infrastructure.
 
-The framework evaluates environmental and hydraulic factors that may contribute to the vulnerability of water distribution systems.
+The WDVF evaluates the combined influence of hydrochemical conditions, climatic stress and hydraulic susceptibility on water distribution vulnerability.
+
+Spatial analysis incorporates groundwater sampling locations and administrative boundaries to evaluate geographic variations in the integrated vulnerability indicators.
 
 ### 3.2 Groundwater and Hydrochemical Data
 
-The hydrochemical assessment uses groundwater observations from 2020, comprising approximately 201 sampling locations.
+The hydrochemical assessment uses **201 groundwater observations collected in 2020**.
 
-The analysis incorporates major-ion chemistry, hydrochemical indices, geochemical modelling outputs, and spatially referenced groundwater characteristics.
+The analysis incorporates major-ion chemistry, hydrochemical indices, geochemical modelling outputs and spatially referenced groundwater characteristics.
 
 Principal datasets include:
 
@@ -53,13 +62,13 @@ Principal datasets include:
 
 Geochemical calculations and mineral saturation indices are supported by PHREEQC modelling.
 
+The groundwater observations provide the hydrochemical baseline for the assessment and are distinct from measurements of treated water within operating distribution pipelines.
+
 ### 3.3 Historical Climate Data
 
-Historical hydroclimatic conditions are evaluated using ERA5-Land climate data covering 1995–2025.
+Historical hydroclimatic conditions are evaluated using ERA5-Land climate data covering the broader 1995–2025 reference and analysis period.
 
-The period 1995–2014 is used as the historical reference period for climate-model bias correction.
-
-The analysis includes meteorological variables required for reference evapotranspiration and climate-stress calculations.
+The period 1995–2014 provides the historical reference for climate-model bias correction, while the dashboard presents monthly hydroclimatic indicators for 2009–2025.
 
 Relevant datasets include:
 
@@ -68,11 +77,13 @@ Relevant datasets include:
 - `FAO56_ET0_Inputs_2009_2025_with_Rn.xlsx`
 - `Hydroclimatic_Indicators.xlsx`
 
+These datasets support the calculation and interpretation of reference evapotranspiration, precipitation-deficit indicators and composite hydroclimatic stress.
+
 ### 3.4 Future Climate Projections
 
 Future hydroclimatic conditions are assessed using the NASA NEX-GDDP-CMIP6 dataset.
 
-The climate-projection configuration is:
+The climate-projection configuration is summarised below.
 
 | Parameter | Description |
 |---|---|
@@ -82,8 +93,8 @@ The climate-projection configuration is:
 | Future projection period | 2031–2070 |
 | Near-term period | 2031–2050 |
 | Mid-century period | 2051–2070 |
-| Intermediate-emissions scenario | SSP2-4.5 |
-| High-emissions scenario | SSP5-8.5 |
+| Intermediate-emissions pathway | SSP2-4.5 |
+| High-emissions pathway | SSP5-8.5 |
 
 Seven climate variables are incorporated:
 
@@ -99,77 +110,88 @@ Seven climate variables are incorporated:
 
 Historical ACCESS-CM2 simulations are evaluated against ERA5-Land reference data, and bias-correction procedures are applied to future climate projections.
 
-The future assessment uses one global climate model and should not be interpreted as a multi-model CMIP6 ensemble.
+The future assessment uses a single global climate model rather than a multi-model CMIP6 ensemble.
 
 ---
 
-## 4. Methodological Framework
+## 4. Water Distribution Vulnerability Framework
+
+The WDVF consists of interconnected hydrochemical, hydroclimatic, hydraulic, geospatial and machine-learning components.
 
 ### 4.1 Hydrochemical Vulnerability Assessment
 
 Groundwater hydrochemical conditions are evaluated using derived indicators and PHREEQC geochemical modelling.
 
-The hydrochemical framework incorporates parameters such as:
+The principal hydrochemical indicators include:
 
-- Sodium adsorption ratio (SAR)
-- Kelly's ratio (KR)
-- Sodium hazard index (SHI)
-- Mineral saturation potential (MSP)
-- Total dissolved solids (TDS)
+- Sodium Adsorption Ratio (SAR)
+- Kelly's Ratio (KR)
+- Sodium Hazard Index (SHI)
+- Mineral Saturation Potential (MSP)
+- Total Dissolved Solids (TDS)
 
-These indicators contribute to the composite Hydrochemical Risk Index (HRI).
+These indicators contribute to the composite **Hydrochemical Risk Index (HRI)**.
+
+The HRI provides a normalised measure of relative hydrochemical susceptibility for integration with the other framework components.
 
 ### 4.2 Hydroclimatic Stress Assessment
 
-Hydroclimatic assessment incorporates historical climate observations and future climate projections.
+Hydroclimatic assessment integrates historical meteorological conditions and future climate projections.
 
 The principal analytical components include:
 
 - Reference evapotranspiration (ET₀)
-- Monthly precipitation deficit (MPD)
-- Three-month standardized precipitation-deficit indicator (SPD₃)
+- Monthly Precipitation Deficit (MPD)
+- Three-month Standardised Precipitation-Deficit Indicator (SPD₃)
 - Composite Climate Stress Index (CSI)
 
-The climate-processing workflow includes historical meteorological-data preparation, CMIP6 historical evaluation, bias correction, future climate processing, evapotranspiration calculations, and hydroclimatic indicator development.
+The climate-processing workflow includes historical meteorological-data preparation, climate-model evaluation, bias correction, future climate processing, evapotranspiration calculations and hydroclimatic indicator development.
+
+The resulting indicators support the assessment of atmospheric water demand, precipitation variability and hydroclimatic stress.
 
 ### 4.3 Hydraulic Vulnerability Assessment
 
-Hydraulic vulnerability is assessed using theoretical pipeline parameters and established hydraulic relationships.
+Hydraulic vulnerability is evaluated using engineering parameters, established hydraulic relationships and hydrochemically informed indicators.
 
-The framework includes:
+The framework incorporates:
 
 - Hazen–Williams head-loss estimation
 - Pipeline friction and hydraulic susceptibility
-- Hydrochemically informed scaling and roughness indicators
+- Hydrochemically informed scaling and roughness assessment
 - Pipeline Roughness and Scaling Index (PRSI)
 - Hydraulic Vulnerability Index (HVI)
+- Comparative evaluation of pipeline configurations and parameter sensitivity
 
-The hydraulic assessment represents scenario-based susceptibility rather than direct measurements from a calibrated operational municipal water distribution network.
+The hydraulic calculations use specified pipeline characteristics, including length, diameter, flow and roughness-related coefficients.
 
 Relevant datasets include:
 
 - `Hydraulic_Indicators.xlsx`
 - `Hydraulic_Pipeline_Scenarios.xlsx`
 
+The hydraulic component provides calculated susceptibility indicators for comparative assessment. It is not derived from a calibrated operational distribution-network model.
+
 ### 4.4 GIS-Based Spatial Vulnerability Assessment
 
-Spatial analysis integrates hydrochemical, hydroclimatic, and hydraulic indicators to evaluate geographic differences in vulnerability.
+Spatial analysis integrates hydrochemical, hydroclimatic and hydraulic indicators to evaluate geographic differences in vulnerability.
 
 The workflow incorporates:
 
 - Spatial interpolation
-- Municipal-level aggregation
+- Administrative-area aggregation
 - Spatial hotspot analysis
 - Integrated vulnerability mapping
 - Spatial Vulnerability Index (SVI)
 
-GIS-derived results support the identification of areas with relatively elevated environmental and hydraulic susceptibility.
+The resulting spatial outputs support identification of areas exhibiting relatively elevated environmental and hydraulic susceptibility.
+
+Administrative boundaries are used to summarise and compare spatial vulnerability patterns.
 
 ### 4.5 Machine-Learning Vulnerability Classification
 
-Machine-learning methods are used to classify vulnerability and evaluate the contribution of different hydrochemical, hydroclimatic, and hydraulic predictors.
+Machine-learning methods are used to classify integrated vulnerability and evaluate the contribution of hydrochemical, hydroclimatic and hydraulic predictors.
 
-The modelling framework considers:
+The modelling framework includes:
 
 - Random Forest (RF)
 - Gradient Boosting (GB)
@@ -177,19 +199,120 @@ The modelling framework considers:
 
 The repository contains separate primary and secondary modelling workflows.
 
-Model evaluation includes classification-performance metrics, confusion matrices, and feature-importance analysis.
+Model evaluation incorporates classification-performance metrics, confusion matrices and feature-importance analysis.
 
-### 4.6 Integrated Water Distribution Vulnerability Framework
+The resulting classifications represent the framework's constructed vulnerability categories rather than independently observed pipeline failures.
 
-The WDVF integrates the principal vulnerability components into a structured assessment framework.
+### 4.6 Integrated Vulnerability Assessment
 
-The resulting outputs are intended to support comparative vulnerability analysis, identification of influential risk factors, and research-based prioritization of municipal water infrastructure.
+The WDVF integrates the principal analytical components into a structured assessment framework.
+
+The integrated outputs support:
+
+- Comparative vulnerability assessment
+- Identification of influential environmental and hydraulic indicators
+- Spatial differentiation of vulnerability
+- Infrastructure susceptibility screening
+- Management prioritisation
+- Climate-informed water infrastructure planning
+
+The framework is designed to accommodate updated monitoring observations, revised hydraulic parameters and additional climate information as these become available.
 
 ---
 
-## 5. Repository Structure
+## 5. Qatar Water Vulnerability Intelligence Dashboard
 
-The principal research files are organized under the `Data/` directory.
+The **Qatar Water Vulnerability Intelligence Dashboard** is an interactive Python-based application developed using Streamlit.
+
+It consolidates the principal outputs of the WDVF into a unified geospatial and analytical interface, enabling interactive exploration of vulnerability patterns, hydrochemical characteristics, hydraulic performance and hydroclimatic conditions.
+
+The dashboard is designed to support research interpretation, comparative analysis and water infrastructure decision-making.
+
+### 5.1 Dashboard Components
+
+The dashboard contains six integrated analytical panels.
+
+| Panel | Analytical component | Function |
+|---|---|---|
+| 01 | Municipal Vulnerability Atlas | Interactive GIS visualisation of HRI, CSI, HVI and SVI |
+| 02 | Municipality Performance Ranking | Comparative vulnerability indicators and spatial aggregation |
+| 03 | Hydrochemical Risk Profile | Hydrochemical indicator distributions and comparisons |
+| 04 | Hydraulic Performance Assessment | Head-loss calculations, pipeline configurations and hydraulic susceptibility |
+| 05 | Hydroclimatic Conditions (2009–2025) | Historical climate-stress indicators and temporal variations |
+| 06 | Climate Outlook (2031–2070) | ACCESS-CM2 meteorological projections under SSP2-4.5 and SSP5-8.5 |
+
+The interface also includes interactive filters for spatial indicators, hydrochemical parameters, hydraulic performance metrics, historical climate variables, future meteorological projections and pipeline configurations.
+
+Additional tables provide detailed indicator values, engineering parameters and supporting data provenance.
+
+### 5.2 Dashboard Data Integration
+
+The dashboard incorporates the following principal datasets:
+
+- `GIS_Indicators.xlsx`
+- `Hydrochemistry_Indicators.xlsx`
+- `Hydraulic_Indicators.xlsx`
+- `Hydraulic_Pipeline_Scenarios.xlsx`
+- `Hydroclimatic_Indicators.xlsx`
+- `ACCESS-CM2_ssp245_Monthly_Corrected_2031_2070.xlsx`
+- `ACCESS-CM2_ssp585_Monthly_Corrected_2031_2070.xlsx`
+- Qatar administrative boundary shapefiles
+
+The dashboard reads the packaged datasets and generates interactive visualisations and aggregated indicator summaries.
+
+The climate outlook displays bias-corrected meteorological projections. Future ET₀ and CSI are not recalculated within the dashboard interface.
+
+### 5.3 Dashboard Installation and Execution
+
+Clone the repository:
+
+```bash
+git clone https://github.com/Kagiso-S-More/Qatar_MWDVF.git
+```
+
+Navigate to the dashboard directory:
+
+```bash
+cd Qatar_MWDVF/Dashboard
+```
+
+Install the dashboard dependencies:
+
+```bash
+python -m pip install -r requirements.txt
+```
+
+Launch the application:
+
+```bash
+python -m streamlit run app.py
+```
+
+The dashboard will be accessible locally at:
+
+http://localhost:8501
+
+The Streamlit server must remain active while the application is in use.
+
+**Dashboard source code and documentation:**
+
+[Dashboard directory](https://github.com/Kagiso-S-More/Qatar_MWDVF/tree/main/Dashboard)
+
+[Dashboard README](https://github.com/Kagiso-S-More/Qatar_MWDVF/blob/main/Dashboard/README.md)
+
+### 5.4 Application Scope
+
+The dashboard provides an integrated research and decision-support environment based on the available datasets and modelling outputs.
+
+Hydrochemical information originates from groundwater observations, hydraulic performance indicators are calculated using the specified engineering parameters, and future climate conditions are derived from bias-corrected ACCESS-CM2 projections.
+
+The application supports interactive vulnerability assessment and data exploration. It does not currently receive continuous operational telemetry from water distribution infrastructure.
+
+---
+
+## 6. Repository Structure
+
+The repository separates the interactive dashboard from the principal research datasets, modelling scripts and analytical outputs.
 
 ```text
 Qatar_MWDVF/
@@ -200,23 +323,23 @@ Qatar_MWDVF/
 ├── .gitignore
 ├── .gitattributes
 │
-└──Dashboard/
-    │
-    ├── app.py
-    ├── README.md
-    ├── requirements.txt
-    └── data/
-        ├── GIS_Indicators.xlsx
-        ├── Hydrochemistry_Indicators.xlsx
-        ├── Hydraulic_Indicators.xlsx
-        ├── Hydraulic_Pipeline_Scenarios.xlsx
-        ├── Hydroclimatic_Indicators.xlsx
-        ├── ACCESS-CM2_ssp245_Monthly_Corrected_2031_2070.xlsx
-        ├── ACCESS-CM2_ssp585_Monthly_Corrected_2031_2070.xlsx
-    └── Qatar Boundary/
-        ├── gadm41_QAT_0.*
-        └── gadm41_QAT_1.*
-```
+├── Dashboard/
+│   ├── app.py
+│   ├── README.md
+│   ├── requirements.txt
+│   │
+│   └── data/
+│       ├── GIS_Indicators.xlsx
+│       ├── Hydrochemistry_Indicators.xlsx
+│       ├── Hydraulic_Indicators.xlsx
+│       ├── Hydraulic_Pipeline_Scenarios.xlsx
+│       ├── Hydroclimatic_Indicators.xlsx
+│       ├── ACCESS-CM2_ssp245_Monthly_Corrected_2031_2070.xlsx
+│       ├── ACCESS-CM2_ssp585_Monthly_Corrected_2031_2070.xlsx
+│       │
+│       └── Qatar Boundary/
+│           ├── gadm41_QAT_0.*
+│           └── gadm41_QAT_1.*
 │
 └── Data/
     │
@@ -232,10 +355,7 @@ Qatar_MWDVF/
     │   │   │   └── tasmin/
     │   │   │
     │   │   ├── ssp245/
-    │   │   │   └── [Seven climate-variable folders]
-    │   │   │
     │   │   └── ssp585/
-    │   │       └── [Seven climate-variable folders]
     │   │
     │   ├── Bias_Correction/
     │   ├── ERA5_Land/
@@ -278,54 +398,44 @@ Qatar_MWDVF/
     └── MWDVF_Sensitivity.xlsx
 ```
 
-The folder tree summarizes the principal files and directories rather than providing an exhaustive inventory of every NetCDF file, Python script, figure, and supporting output.
+The directory structure summarises the principal files and folders rather than providing an exhaustive inventory of every climate file, Python script, figure and supporting output.
 
 ---
 
-## 6. Python Environment and Dependencies
+## 7. Python Environment and Dependencies
 
-### 6.1 Development Environment
+### 7.1 Development Environment
 
-The computational workflow uses **Python 3.13.9**, with the Anaconda Python distribution and Spyder integrated development environment (IDE) on Windows.
+The principal computational workflow was developed using **Python 3.13.9**, with the Anaconda Python distribution and Spyder integrated development environment on Windows.
 
-The Python environment supports scientific computing, climate-data processing, hydrochemical and hydraulic indicator calculations, machine-learning classification, and scientific visualization.
+The workflow supports scientific computing, climate-data processing, geochemical and hydraulic calculations, machine-learning classification and scientific visualisation.
 
-### 6.2 Recommended Python Library Versions
+The Streamlit dashboard operates as a separate Python application and is launched through a terminal.
 
-The following are recommended recent stable package versions for Python 3.13.9, rather than a verified record of the exact packages originally installed during every analysis.
+### 7.2 Dependency Management
 
-| Python Library | Recommended Version | Application |
-|---|---|---|
-| NumPy | 2.5.4 | Numerical computations and array processing |
-| pandas | 3.1.0 | Data manipulation and time-series analysis |
-| SciPy | 1.18.1 | Scientific and statistical calculations |
-| Matplotlib | 3.11.2 | Scientific plotting and visualization |
-| scikit-learn | 1.9.1 | Machine learning, model evaluation, and validation |
-| XGBoost | 3.4.1 | Extreme Gradient Boosting classification |
-| netCDF4 | 1.7.5.1.post1 | Processing NetCDF climate datasets |
-| openpyxl | 3.1.5 | Reading and writing Excel workbooks |
+The repository contains two requirements files:
 
-Other libraries imported by individual scripts may also be required.
+| File | Purpose |
+|---|---|
+| `requirements.txt` | Principal scientific and modelling workflow |
+| `Dashboard/requirements.txt` | Streamlit dashboard and visualisation dependencies |
 
-### 6.3 Installing Python Dependencies
-
-Create or activate a Python 3.13.9 environment before installing the packages.
-
-The recommended packages can be installed using:
-
-```bash
-python -m pip install numpy==2.5.4 pandas==3.1.0 scipy==1.18.1 matplotlib==3.11.2 scikit-learn==1.9.1 xgboost==3.4.1 netCDF4==1.7.5.1.post1 openpyxl==3.1.5
-```
-
-Alternatively, use the repository's requirements file:
+Install the principal research dependencies using:
 
 ```bash
 python -m pip install -r requirements.txt
 ```
 
-The `requirements.txt` file should contain package versions consistent with the selected computational environment.
+For the dashboard:
 
-### 6.4 Recording the Computational Environment
+```bash
+python -m pip install -r Dashboard/requirements.txt
+```
+
+The dependencies required for individual scripts may differ according to their analytical functions.
+
+### 7.3 Recording the Computational Environment
 
 For reproducibility, users can record their installed Python version and package dependencies using:
 
@@ -336,107 +446,112 @@ python -m pip freeze > environment_versions.txt
 
 The resulting file provides a record of the installed packages for that computational environment.
 
-The recommended dependency combination should be tested against the complete analysis workflow before being considered a fully validated environment.
-
 ---
 
-## 7. Computational Reproducibility
+## 8. Computational Reproducibility
 
-The repository contains Python scripts and associated input datasets supporting the principal computational stages.
+The repository provides Python scripts and associated datasets supporting the principal computational stages of the WDVF.
 
 The recommended processing sequence is outlined below.
 
-### Step 1: Prepare Groundwater and Hydraulic Datasets
+**Step 1: Groundwater and Hydrochemical Data Preparation**
 
-Prepare the groundwater chemistry, hydrochemical indicators, PHREEQC results, theoretical hydraulic parameters, and GIS-related datasets.
+Prepare groundwater chemistry datasets, hydrochemical indicators, PHREEQC outputs and spatially referenced observations.
 
-### Step 2: Process Historical ERA5-Land Climate Data
+**Step 2: Historical ERA5-Land Climate Processing**
 
-Use the Python scripts within `Data/ERA5_Land/` to process the historical climate datasets and generate tabulated meteorological inputs.
+Process historical meteorological datasets using the scripts within `Data/ERA5_Land/`.
 
-### Step 3: Process Historical CMIP6 Simulations
+**Step 3: Historical CMIP6 Processing**
 
 Process ACCESS-CM2 historical climate simulations using the relevant scripts within `Data/CMIP6/`.
 
-### Step 4: Perform Climate Bias Correction
+**Step 4: Climate Bias Correction**
 
-Compare historical ACCESS-CM2 simulations against ERA5-Land reference data and derive the bias-correction parameters.
+Evaluate historical ACCESS-CM2 simulations against ERA5-Land reference data and apply the selected bias-correction procedures.
 
-### Step 5: Process Future Climate Projections
+**Step 5: Future Climate Projection Processing**
 
-Process the SSP2-4.5 and SSP5-8.5 climate projections for 2031–2070.
+Process SSP2-4.5 and SSP5-8.5 projections for 2031–2070.
 
-### Step 6: Calculate Future Hydroclimatic Indicators
+**Step 6: Hydroclimatic Indicator Development**
 
-Calculate reference evapotranspiration, precipitation-deficit indicators, and composite climate-stress metrics.
+Calculate reference evapotranspiration, precipitation-deficit indicators and composite climate-stress metrics.
 
-### Step 7: Conduct Spatial Vulnerability Analysis
+**Step 7: Hydraulic Vulnerability Assessment**
 
-Integrate the hydrochemical, hydroclimatic, and hydraulic indicators through GIS-based spatial analysis.
+Calculate hydraulic head loss, roughness and scaling indicators, and hydraulic vulnerability indices using the supplied engineering parameters.
 
-### Step 8: Execute Machine-Learning Models
+**Step 8: GIS-Based Spatial Vulnerability Assessment**
 
-Run the primary and secondary machine-learning scripts using their respective datasets.
+Integrate hydrochemical, hydroclimatic and hydraulic indicators through spatial interpolation, aggregation and vulnerability mapping.
 
-### Step 9: Evaluate Model Performance
+**Step 9: Machine-Learning Classification**
 
-Evaluate classification performance, confusion matrices, feature importance, and sensitivity-analysis results.
+Execute the primary and secondary machine-learning workflows using their respective datasets.
 
-### Step 10: Generate Research Figures and Tables
+**Step 10: Model Evaluation and Sensitivity Analysis**
 
-Use the processed datasets and modelling outputs to generate the figures, maps, and tables required for scientific interpretation.
+Evaluate classification performance, feature importance, confusion matrices and sensitivity-analysis results.
 
-**Important:** Some scripts use local Windows directory paths. These paths may need to be updated to match the user's computer before execution.
+**Step 11: Interactive Dashboard Visualisation**
 
-The processing stages are interdependent, and some scripts require outputs generated by preceding stages.
+Launch the Streamlit dashboard to explore the integrated spatial, hydrochemical, hydraulic and climate outputs.
+
+**Important:** Some research scripts contain local Windows directory paths and may require adjustment before execution on another computer. Processing stages may also depend on outputs generated during preceding steps.
 
 ---
 
-## 8. Research Outputs
+## 9. Research Outputs
 
-The repository includes supporting materials for the following analytical components:
+The repository includes supporting materials for the following analytical components.
 
-| Component | Principal Outputs |
+| Component | Principal outputs |
 |---|---|
-| Hydrochemistry | Hydrochemical indicators, PHREEQC results, HRI |
-| Hydroclimate | Historical and future climate indicators, CSI |
-| Hydraulics | Pipeline scenarios, head-loss susceptibility, PRSI, HVI |
-| GIS | Spatial indicators, vulnerability mapping, SVI |
-| Machine learning | Classification results, performance metrics, confusion matrices |
-| Sensitivity analysis | Integrated vulnerability sensitivity results |
-| Climate projections | Historical and future ACCESS-CM2 datasets and processed outputs |
+| Hydrochemistry | SAR, KR, SHI, MSP, TDS, PHREEQC results and HRI |
+| Hydroclimate | Historical hydroclimatic indicators, climate projections and CSI |
+| Hydraulics | Pipeline configurations, head-loss calculations, PRSI and HVI |
+| GIS | Spatial indicators, vulnerability maps and SVI |
+| Machine learning | Classification outputs, performance metrics, confusion matrices and feature importance |
+| Sensitivity analysis | Hydraulic parameter sensitivity and integrated vulnerability responses |
+| Climate projections | ACCESS-CM2 historical and future climate datasets and processed outputs |
+| Interactive dashboard | Integrated GIS maps, vulnerability rankings, indicator comparisons, hydraulic assessments and climate visualisations |
 
-These materials support the scientific analysis and interpretation presented in the associated research manuscript.
-
----
-
-## 9. Scientific Interpretation and Limitations
-
-The results should be interpreted within the following methodological limitations:
-
-1. **Climate-model uncertainty:** Future climate projections are based on ACCESS-CM2 rather than a multi-model CMIP6 ensemble.
-
-2. **Bias-correction uncertainty:** Bias correction reduces selected systematic differences between historical simulations and reference data but does not eliminate future projection uncertainty.
-
-3. **Spatial uncertainty:** Spatial interpolation, sampling distribution, and municipality-level aggregation may influence the resulting vulnerability patterns.
-
-4. **Machine-learning uncertainty:** Classification performance depends on predictor selection, target-variable construction, training data, and validation procedures.
-
-5. **Operational interpretation:** The framework is intended for comparative susceptibility assessment and research-based prioritization, not direct prediction of individual pipeline failures.
+These outputs support the scientific interpretation and practical application of the WDVF.
 
 ---
 
-## 10. Data Sources and Acknowledgements
+## 10. Scientific Interpretation and Limitations
 
-The research incorporates datasets and methodological information from the following sources.
+The WDVF should be interpreted within the following methodological considerations.
 
-### 10.1 NASA NEX-GDDP-CMIP6
+1. **Hydrochemical data:** Groundwater observations represent the hydrochemical baseline and should not be interpreted as direct measurements of treated water within operating distribution pipelines.
+
+2. **Hydraulic assessment:** Hydraulic indicators are derived from the supplied pipeline configurations and engineering parameters rather than a calibrated operational distribution-network model.
+
+3. **Climate-model uncertainty:** Future climate projections are based on ACCESS-CM2 and do not represent a multi-model CMIP6 ensemble.
+
+4. **Bias-correction uncertainty:** Bias correction reduces selected systematic differences between historical simulations and reference data but does not eliminate future projection uncertainty.
+
+5. **Spatial uncertainty:** Sampling distribution, spatial interpolation and administrative-area aggregation may influence vulnerability patterns and rankings.
+
+6. **Machine-learning interpretation:** Classification performance depends on predictor selection, constructed vulnerability classes, training data and validation procedures.
+
+7. **Dashboard interpretation:** The dashboard visualises calculated research indicators and climate projections. It is not connected to live water distribution telemetry or utility control systems.
+
+The framework is intended for comparative vulnerability assessment, infrastructure susceptibility screening and research-informed prioritisation rather than direct prediction of individual pipeline failures.
+
+---
+
+## 11. Data Sources and Acknowledgements
+
+### 11.1 NASA NEX-GDDP-CMIP6
 
 Thrasher, B., et al. (2022). NASA Global Daily Downscaled Projections, CMIP6. *Scientific Data*, 9, 262.
 
 https://doi.org/10.1038/s41597-022-01393-4
 
-### 10.2 ERA5-Land
+### 11.2 ERA5-Land
 
 Copernicus Climate Change Service (C3S), Climate Data Store.
 
@@ -444,70 +559,74 @@ ERA5-Land reanalysis dataset.
 
 https://cds.climate.copernicus.eu/
 
-### 10.3 Groundwater Data
+### 11.3 Groundwater Data
 
 Groundwater observations are attributed to the original sources used in the study, including Shomar and Sankaran (2024).
 
 Users should consult the associated manuscript and original publications for complete bibliographic information and applicable data-use conditions.
 
-### 10.4 Software and Analytical Methods
+### 11.4 Software and Analytical Methods
 
-The research incorporates Python scientific-computing libraries, PHREEQC geochemical modelling, and GIS-based spatial analysis.
+The research incorporates Python scientific-computing libraries, PHREEQC geochemical modelling, GIS-based spatial analysis, machine-learning methods and Streamlit interactive visualisation.
 
-The original developers, software documentation, and relevant scientific publications should be acknowledged where appropriate.
+Original software developers, documentation and relevant scientific publications should be acknowledged where appropriate.
 
-All third-party datasets remain subject to the access conditions and redistribution policies established by their respective providers.
-
----
-
-## 11. Data Availability
-
-The research datasets, Python scripts, modelling outputs, climate-processing materials, and supporting figures uploaded for the study are available through this GitHub repository:
-
-https://github.com/Kagiso-S-More/Qatar_MWDVF
-
-The repository includes processed research datasets and supporting source files associated with the hydrochemical, hydroclimatic, hydraulic, GIS, and machine-learning assessments.
-
-The availability and reuse of individual third-party datasets remain subject to the terms established by their original providers.
+Third-party datasets remain subject to the access conditions and redistribution policies established by their respective providers.
 
 ---
 
-## 12. Citation
+## 12. Data and Code Availability
 
-Researchers using the framework, scripts, or derived datasets are requested to acknowledge this repository and cite the associated research publication when available.
+The research datasets, Python scripts, modelling outputs, climate-processing materials, geospatial resources and interactive dashboard are available through the GitHub repository:
 
-**Repository title:** Qatar Municipal Water Distribution Vulnerability Framework (MWDVF)
+**https://github.com/Kagiso-S-More/Qatar_MWDVF**
+
+The repository provides supporting materials associated with the hydrochemical, hydroclimatic, hydraulic, GIS and machine-learning components of the WDVF.
+
+The interactive dashboard is available under:
+
+**https://github.com/Kagiso-S-More/Qatar_MWDVF/tree/main/Dashboard**
+
+The availability and reuse of individual third-party datasets remain subject to their original licensing and access conditions.
+
+---
+
+## 13. Citation
+
+Researchers using the framework, scripts, dashboard or derived datasets are requested to acknowledge the repository and cite the associated research publication when available.
+
+**Repository title:** Qatar Water Distribution Vulnerability Framework (WDVF)
 
 **Author:** Kagiso S. More
 
 **Repository URL:** https://github.com/Kagiso-S-More/Qatar_MWDVF
 
-Citation metadata is provided in the `CITATION.cff` file.
+Citation metadata is provided in `CITATION.cff`.
 
 Publication information and a permanent repository DOI may be added following manuscript publication and repository archiving.
 
 ---
 
-## 13. Licensing and Reuse
+## 14. Licensing and Reuse
 
-No blanket open-source license is currently specified for this repository.
+No blanket open-source licence is currently specified for this repository.
 
-The absence of a license does not imply unrestricted permission to reproduce, modify, or redistribute the repository contents.
+The absence of a licence does not imply unrestricted permission to reproduce, modify or redistribute repository contents.
 
-Original research code, processed datasets, and third-party source materials may be subject to different intellectual-property and reuse conditions.
+Original research code, processed datasets and third-party source materials may be subject to different intellectual-property and reuse conditions.
 
 Users should verify applicable permissions before redistributing source datasets or adapting research materials.
 
 ---
 
-## 14. Contact
+## 15. Contact
 
 **Kagiso S. More**
 
-Research areas: Hydrogeochemistry, Hydroclimatic Modelling, Water Infrastructure Vulnerability, GIS, and Machine Learning.
+Research areas: Hydrogeochemistry, Hydroclimatic Modelling, Water Infrastructure Vulnerability, GIS and Machine Learning.
 
 **GitHub:** https://github.com/Kagiso-S-More
 
 **Research repository:** https://github.com/Kagiso-S-More/Qatar_MWDVF
 
-For scientific enquiries, collaboration opportunities, or methodological questions, please contact the repository owner through GitHub.
+For scientific enquiries, collaboration opportunities or methodological questions, please contact the repository owner through GitHub.
