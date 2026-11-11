@@ -165,11 +165,10 @@ with st.expander('Methodology, data provenance and interpretation', expanded=Fal
 - **Coverage and index interpretation:** Sample counts are displayed alongside municipal summaries. Locations with limited observations should not be assigned confident comparative priorities. Hydraulic indices may exceed the original baseline normalization bounds.
 - **Update frequency:** Results are refreshed when source files are updated; the application is not connected to operational telemetry or utility control systems.
 
-All charts are generated directly from the supplied data files, without substituting manuscript-derived values.
 ''')
     st.markdown('**Included Excel data sources**')
     for file in sorted(BASE.glob('*.xlsx')):
         st.markdown(f'- `{file.name}`')
 
 st.divider()
-st.caption('Qatar Municipal Water Vulnerability Intelligence  |  Integrated environmental and hydraulic assessment  |  Data provenance and methods available above')
+st.caption('Qatar Water Vulnerability Intelligence  |  Integrated environmental and hydraulic assessment  |  Data provenance and methods available above')
