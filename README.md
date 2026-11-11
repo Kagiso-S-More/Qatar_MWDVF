@@ -1,12 +1,12 @@
-# Qatar Municipal Water Distribution Vulnerability Framework (MWDVF)
+# Qatar Water Distribution Vulnerability Framework (WDVF)
 
 ## 1. Overview
 
 This repository contains the research datasets, Python scripts, modelling outputs, climate projections, and supporting documentation developed for the study:
 
-**Integrated GIS–AI Assessment of Municipal Water Distribution Vulnerability Using Hydrochemical, Hydroclimatic and Hydraulic Indicators in Qatar**
+**Integrated GIS–AI Assessment of Water Distribution Vulnerability Using Hydrochemical, Hydroclimatic and Hydraulic Indicators in Qatar**
 
-The study develops an integrated framework for assessing municipal water distribution vulnerability in Qatar by combining groundwater hydrochemistry, hydroclimatic stress, hydraulic susceptibility, geographic information systems (GIS), and artificial intelligence (AI).
+The study develops an integrated framework for assessing water distribution vulnerability in Qatar by combining groundwater hydrochemistry, hydroclimatic stress, hydraulic susceptibility, geographic information systems (GIS), and artificial intelligence (AI).
 
 The repository supports research transparency, computational reproducibility, methodological verification, and future applications of integrated vulnerability assessment in water-resource management and infrastructure planning.
 
@@ -36,7 +36,7 @@ The study aims to:
 
 The study focuses on Qatar, a hyper-arid country characterized by limited natural freshwater availability, high atmospheric evaporative demand, and substantial reliance on engineered water infrastructure.
 
-The framework evaluates environmental and hydraulic factors that may contribute to the vulnerability of municipal water distribution systems.
+The framework evaluates environmental and hydraulic factors that may contribute to the vulnerability of water distribution systems.
 
 ### 3.2 Groundwater and Hydrochemical Data
 
@@ -179,9 +179,9 @@ The repository contains separate primary and secondary modelling workflows.
 
 Model evaluation includes classification-performance metrics, confusion matrices, and feature-importance analysis.
 
-### 4.6 Integrated Municipal Water Distribution Vulnerability Framework
+### 4.6 Integrated Water Distribution Vulnerability Framework
 
-The MWDVF integrates the principal vulnerability components into a structured assessment framework.
+The WDVF integrates the principal vulnerability components into a structured assessment framework.
 
 The resulting outputs are intended to support comparative vulnerability analysis, identification of influential risk factors, and research-based prioritization of municipal water infrastructure.
 
